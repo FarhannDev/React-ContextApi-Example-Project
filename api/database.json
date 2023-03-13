@@ -1,0 +1,32 @@
+{
+  "posts": [
+    {
+      "id": "lf6ra41o330jjcwg8",
+      "title": "Apa itu Laravel dan fungsinya?",
+      "body": "Laravel merupakan framework yang dapat membantu web developer dalam memaksimalkan penggunaan PHP dalam proses pengembangan website. Seperti diketahui, PHP sendiri merupakan bahasa pemograman yang cukup dinamis. Dimana kehadiran Laravel kemudian membuat PHP menjadi lebih powerful, cepat, aman, dan simple.",
+      "createdAt": "2023-03-13T11:43:19.548Z",
+      "updatedAt": "2023-03-13T11:43:19.548Z"
+    },
+    {
+      "id": "lf6ras6k3hd5l0nkx",
+      "title": "Konsep apa yang digunakan dalam Laravel?",
+      "body": "Framework Laravel menggunakan struktur MVC (Model View Controller). MVC merupakan model aplikasi yang memisahkan antara data dan tampilan berdasarkan komponen aplikasi. Dengan adanya model MVC, pengguna Laravel menjadi lebih mudah dalam mempelajari Laravel.Framework Laravel menggunakan struktur MVC (Model View Controller). MVC merupakan model aplikasi yang memisahkan antara data dan tampilan berdasarkan komponen aplikasi. Dengan adanya model MVC, pengguna Laravel menjadi lebih mudah dalam mempelajari Laravel.",
+      "createdAt": "2023-03-13T11:43:50.828Z",
+      "updatedAt": "2023-03-13T11:51:51.756Z"
+    },
+    {
+      "id": "lf6rb4f8197py92pf",
+      "title": "Apa bedanya PHP dan Laravel?",
+      "body": "Laravel merupakan framework PHP yang open-source dan berisi banyak modul dasar untuk mengoptimalkan kinerja PHP dalam pengembangan aplikasi web, apalagi PHP adalah bahasa pemrograman yang dinamis dan Laravel disini bisa bertindak untuk membuat web development lebih cepat, lebih aman, dan lebih simpel.",
+      "createdAt": "2023-03-13T11:44:06.692Z",
+      "updatedAt": "2023-03-13T11:44:06.692Z"
+    },
+    {
+      "id": "lf6rbp64y8t82zn2",
+      "title": "Apa yg dimaksud bootstrap?",
+      "body": "Bootstrap adalah framework web development berbasis HTML, CSS, dan JavaScript yang dirancang untuk mempercepat proses pengembangan web responsive dan mobile-first (memprioritaskan perangkat seluler).",
+      "createdAt": "2023-03-13T11:44:33.580Z",
+      "updatedAt": "2023-03-13T11:58:25.474Z"
+    }
+  ]
+}

@@ -1,23 +1,22 @@
-import React, { useEffect, useRef } from "react";
-import { useContext } from "react";
-import DataContext from "../../context/DataContext";
+import React, { useEffect, useRef, useContext } from "react";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
+import DataContext from "../../context/PostContext";
 
-export default function SearchArticle({ title }) {
+export default function SearchPost({ title, posts }) {
   const inputRef = useRef();
-  const { articles, searchArticle, setSearchArticle, setSearchResult } =
+  const { searchPosts, setSearchPosts, setSearchResults } =
     useContext(DataContext);
 
   useEffect(() => {
-    const filteredResult = articles.filter((article) =>
-      article.title.toLowerCase().includes(searchArticle.toLowerCase())
+    const filteredResult = posts.filter((article) =>
+      article.title.toLowerCase().includes(searchPosts.toLowerCase())
     );
 
-    setSearchResult(filteredResult);
-  }, [articles, searchArticle, setSearchResult]);
+    setSearchResults(filteredResult);
+  }, [posts, searchPosts, setSearchResults]);
 
-  const onSearchChangeEventHandler = (e) => setSearchArticle(e.target.value);
+  const onSearchChangeEventHandler = (e) => setSearchPosts(e.target.value);
 
   return (
     <div className="py-3">
@@ -27,7 +26,7 @@ export default function SearchArticle({ title }) {
             <InputGroup className="mb-3">
               <Form.Control
                 ref={inputRef}
-                value={searchArticle}
+                value={searchPosts}
                 onChange={onSearchChangeEventHandler}
                 placeholder={title}
                 aria-label={title}

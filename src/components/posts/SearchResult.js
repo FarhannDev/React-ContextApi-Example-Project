@@ -3,10 +3,10 @@ import { Card } from "react-bootstrap";
 import styles from "../../styles/articles.module.css";
 import Message from "../shared/Message";
 
-export default function SearchResultArticle({ result }) {
+export default function SearchResultPost({ result }) {
   return (
     <>
-      {!result.length && <Message message="Artikel tidak ditemukan." />}
+      {!result.length && <Message message="Postingan tidak ditemukan." />}
       <div className="row justify-content-arround">
         {result.map((result, index) => (
           <div key={index} className="col-xl-6 col-md-6 col-sm-12">
@@ -16,7 +16,7 @@ export default function SearchResultArticle({ result }) {
                   {result.title}
                 </Card.Title>
                 <Card.Text className={styles.cardArticleBody}>
-                  {`${result.contentSnipet.slice(0, 120)}...`}
+                  {`${result.body.slice(0, 120)}...`}
                 </Card.Text>
               </Card.Body>
             </Card>

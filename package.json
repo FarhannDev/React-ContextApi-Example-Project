@@ -23,7 +23,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "fake-server": "npx json-server -p 5000 -w api/articles.json "
+    "fake-server": "npx json-server -p 5000 -w api/database.json "
   },
   "eslintConfig": {
     "extends": [
