@@ -1,5 +1,5 @@
 import React, { useRef, useContext, useState, useEffect } from "react";
-import { Link, useHistory, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
 import Button from "react-bootstrap/Button";
@@ -21,7 +21,7 @@ export default function EditPost() {
   // const post = posts.filter((filtered) => filtered.id === id)[0];
   const post = posts.find((post) => post.id === id);
   const inputRef = useRef();
-  const history = useHistory();
+  const navigate = useNavigate();
 
   useEffect(() => {
     post && setPostEditTitle(post.title);
@@ -60,7 +60,7 @@ export default function EditPost() {
         posts.map((post) => (post.id === id ? { ...response.data } : post))
       );
 
-      history.push(`/post/${id}`);
+      navigate.push(`/post/${id}`);
 
       Swal.fire({
         icon: "success",

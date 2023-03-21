@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { useParams, Link, useHistory } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
 import DataContext from "../../context/PostContext";
@@ -8,7 +8,7 @@ import BoxTitle from "../../components/box/BoxTitle";
 import Loading from "../../components/shared/Loading";
 
 export default function PostSingle() {
-  const history = useHistory();
+  const navigate = useNavigate();
   const { id } = useParams();
   const { isLoading, posts, setPosts } = useContext(DataContext);
   const post = posts.filter((filtered) => filtered.id === id)[0];
@@ -29,7 +29,7 @@ export default function PostSingle() {
         if (result.isConfirmed) {
           axios.delete(`http://localhost:5000/posts/${id}`);
           setPosts(posts.filter((post) => post.id !== id));
-          history.push("/");
+          navigate.push("/");
           Swal.fire("Dihapus", "Artikel dihapus.", "success");
         }
       });

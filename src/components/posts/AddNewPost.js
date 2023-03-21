@@ -1,5 +1,5 @@
 import React, { useRef, useContext, useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
 import Button from "react-bootstrap/Button";
@@ -17,7 +17,7 @@ export default function AddNewPost() {
   const [limitKarakterBody, setLimitKarakterBody] = useState(0);
 
   const inputRef = useRef();
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const onPostTitleChangeEventHandler = (event) => {
     setLimitKarakterTitle(50);
@@ -53,7 +53,7 @@ export default function AddNewPost() {
       );
 
       setPosts([...posts, response.data]);
-      history.push("/");
+      navigate.push("/");
       Swal.fire({
         icon: "success",
         title: "Berhasil",

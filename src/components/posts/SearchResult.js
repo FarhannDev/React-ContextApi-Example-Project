@@ -1,28 +1,28 @@
 import React from "react";
-import { Card } from "react-bootstrap";
-import styles from "../../styles/articles.module.css";
+import { Card, Row, Col } from "react-bootstrap";
 import Message from "../shared/Message";
+import styles from "../../styles/articles.module.css";
 
 export default function SearchResultPost({ result }) {
   return (
     <>
       {!result.length && <Message message="Postingan tidak ditemukan." />}
-      <div className="row justify-content-arround">
-        {result.map((result, index) => (
-          <div key={index} className="col-xl-6 col-md-6 col-sm-12">
-            <Card className={styles.cardArticle}>
-              <Card.Body>
+      {result && (
+        <Row className="justify-content-arround">
+          {result.map((result, index) => (
+            <Col key={index} xl={6} md={6} sm={12}>
+              <Card body className={styles.cardArticle}>
                 <Card.Title className={styles.cardArticleTitle}>
                   {result.title}
                 </Card.Title>
                 <Card.Text className={styles.cardArticleBody}>
-                  {`${result.body.slice(0, 120)}...`}
+                  {`${result.body.substring(0, 120)}... Selengkapnya`}
                 </Card.Text>
-              </Card.Body>
-            </Card>
-          </div>
-        ))}
-      </div>
+              </Card>
+            </Col>
+          ))}
+        </Row>
+      )}
     </>
   );
 }

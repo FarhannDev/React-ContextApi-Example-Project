@@ -1,18 +1,20 @@
-import React, { Children } from "react";
-import Navigation from "./Navigation";
+import React from "react";
+import { DataProvider } from "../../context/PostContext";
 
-export default function Layout({ children }) {
+import Navigation from "./Navigation";
+import Container from "./Container";
+import { Outlet } from "react-router-dom";
+export default function Layout() {
   return (
     <>
-      {/* Header */}
       <Navigation />
-      {/* Main content */}
-      <main className="container-fluid main-content">
-        {Children.map(children, (child) => (
-          <>{child}</>
-        ))}
-      </main>
-      {/* Footer */}
+      <Container>
+        <DataProvider>
+          <main className="container-fluid main-content">
+            <Outlet />
+          </main>
+        </DataProvider>
+      </Container>
     </>
   );
 }

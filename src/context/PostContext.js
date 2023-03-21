@@ -6,7 +6,9 @@ export const DataProvider = ({ children }) => {
   const [posts, setPosts] = useState([]);
   const [searchPosts, setSearchPosts] = useState("");
   const [searchResults, setSearchResults] = useState([]);
-  const { data, fetchError, isLoading } = useAxiosFetch("http://example.com");
+  const { data, fetchError, isLoading } = useAxiosFetch(
+    "http://localhost:5000/posts"
+  );
 
   useEffect(() => {
     setPosts(data);
